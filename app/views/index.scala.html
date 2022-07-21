@@ -1,0 +1,10 @@
+
+
+@()(implicit request: Http.Request)
+@main("Welcome to Play") {
+  <div>
+  @helper.CSRF.formField
+  </div>
+
+  <div id="app"></div>
+}

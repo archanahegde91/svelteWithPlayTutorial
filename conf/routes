@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET          /                                      controllers.HomeController.index(request: Request)
+
+GET         /polls                                  controllers.HomeController.all(request: Request)
+
++nocsrf
+POST         /polls/create                          controllers.HomeController.save(request: Request)
+POST         /polls/vote                            controllers.HomeController.vote(request: Request)
+
++nocsrf
+DELETE      /polls/:uuid                            controllers.HomeController.delete(request: Request, uuid: java.util.UUID)
+
+#javascript routes
+GET         /javascript-routes/create/poll          controllers.HomeController.javascriptRoutes(request:Request)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(file)
+
